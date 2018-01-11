@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mandelle</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body>
+
+
+    <div class="container">
+
+      <nav class="navbar navbar-light bg-faded">
+        <a class="navbar-brand" href="#">M & Elle</a>
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search...">
+      </nav>
+
+      <div class="row">
+        <ul class="col-md-3 pull-left">
+          <div class="navigation">
+
+
+            <p>
+              <%= link_to "Sale", "#", id: "sale-title" %>
+            </p>
+
+              <ul id="sale-options">
+                <li><a href= '#' id="bodysuits" class="sale-category">BodySuits</a></li>
+                <li><a href="#"  id="Dresses"class="sale-category">Dresses</a></li>
+                <li><a href="#"  id="Jackets"class="sale-category">Jackets</a></li>
+                <li><a href="#"  id="Jeans"class="sale-category">Jeans</a></li>
+                <li><a href="#"  id="Pants"class="sale-category">Pants</a></li>
+                <li><a href="#"  id="Jumpsuits"class="sale-category">Jumpsuits</a></li>
+                <li><a href="#"  id="Leggings"class="sale-category">Leggings</a></li>
+                <li><a href="#"  id="Outfits"class="sale-category">Outfits</a></li>
+                <li><a href="#"  id="Skirts"class="sale-category">Skirts</a></li>
+                <li><a href="#"  id="Tops"class="sale-category">Tops</a></li>
+                <li><a href="#"  id="Tracksuits"class="sale-category">Tracksuits</a></li>
+              </ul>
+
+
+              <p>
+                <%= link_to "New Collection", "#", id: "new-collection-title" %>
+              </p>
+
+              <ul id="new-collection-options">
+                <li><a href="#">Bodysuits</a></li>
+                <li><a href="#">Dresses</a></li>
+                <li><a href="#">Jackets</a></li>
+                <li><a href="#">Jeans</a></li>
+                <li><a href="#">Pants</a></li>
+                <li><a href="#">Jumpsuits</a></li>
+                <li><a href="#">Leggings</a></li>
+                <li><a href="#">Outfits</a></li>
+                <li><a href="#">Skirts</a></li>
+                <li><a href="#">Tops</a></li>
+                <li><a href="#">Tracksuits</a></li>
+              </ul>
+
+          </div>
+        </ul>
+
+
+
+          <div class="col-md-9 pull-right">
+            <div class="main-content">
+              <%= yield %>
+            </div>
+          </div>
+
+          </div>
+        </div>
+
+
+
+     </div>
+
+  </body>
+</html>
