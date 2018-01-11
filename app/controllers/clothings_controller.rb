@@ -40,8 +40,8 @@ def destroy
 
 end
 
-def retrieve
 
+def retrieve
   @clothings = Clothing.find_by(params[:category])
 end
 

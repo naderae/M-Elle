@@ -37,6 +37,7 @@ gem 'autoprefixer-rails'
 
 # gem "paperclip", "~> 4.2"
 gem 'carrierwave'
+gem 'mini_magick', '~> 4.3'
 gem 'jquery-rails'
 
 
