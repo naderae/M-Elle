@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+
+  <table style="width:45%">
+    <tr>
+      <th>Category</th>
+      <th>Stock Count</th>
+
+    </tr>
+    <tr>
+      <td> <%= link_to 'BodySuits', '/admin/bodysuits' %></td>
+      <td><%= @bodysuits.count  %></td>
+
+
+      </td>
+    </tr>
+    <tr>
+      <td>Dresses</td>
+      <td><%= @dresses.count %></td>
+
+    </tr>
+    <tr>
+      <td>Jackets</td>
+      <td><%= @jackets.count %></td>
+
+    </tr>
+    <tr>
+      <td>Jeans</td>
+      <td><%= @jeans.count %></td>
+
+    </tr>
+    <tr>
+      <td>Pants</td>
+      <td><%= @pants.count %></td>
+
+    </tr>
+    <tr>
+      <td>Jumpsuits</td>
+      <td><%= @jumpsuits.count %></td>
+
+    </tr>
+    <tr>
+      <td>Leggings</td>
+      <td><%= @leggings.count %></td>
+
+    </tr>
+    <tr>
+      <td>Outfits</td>
+      <td><%= @outfits.count %></td>
+
+    </tr>
+    <tr>
+      <td>Skirts</td>
+      <td><%= @skirts.count %></td>
+
+    </tr>
+    <tr>
+      <td>Tops</td>
+      <td><%= @tops.count %></td>
+
+    </tr>
+    <tr>
+      <td>Tracksuits</td>
+      <td><%= @tracksuits.count %></td>
+
+    </tr>
+</table>
+
+
+
+
+
+
+  </body>
+</html>
