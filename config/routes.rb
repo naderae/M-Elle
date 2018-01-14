@@ -6,9 +6,9 @@ Rails.application.routes.draw do
 
   get '/home' => 'home#index'
 
-  get 'admin' => 'admin#index'
+  get 'admins' => 'admin#index'
 
-  get 'admin/:category' => 'admin#display'
+  get 'admins/:category', to: 'admin#display', as: :admin
 
   match '/clothings/retrieve' => 'clothings#retrieve', :via  => :post
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

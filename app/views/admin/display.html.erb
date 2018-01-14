@@ -5,9 +5,23 @@
     <title></title>
   </head>
   <body>
-    <%= @items.count %>
+    <% @items.each do |item| %>
+      <%= item.category %><br>
+      <%= item.description %><br>
+      <%= item.color %><br>
+      <%= item.quantity %><br>
+      <%= item.quantity_sold %><br>
+      <%= item.quantity_added %><br>
 
-    <p>hello</p>
+      <%= form_for item do |f| %>
+      amount sold:  <%= f.number_field :quantity_sold %><br>
+      amount added:  <%= f.number_field :quantity_added %>
+        <%= f.submit "Update" %>
+      <% end %>
+
+
+    <% end %>
+
 
   </body>
 </html>

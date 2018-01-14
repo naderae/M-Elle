@@ -30,7 +30,16 @@ end
 def update
   @clothing = Clothing.find(params[:id])
   @clothing.update_attributes!(clothing_params)
-  redirect_to '/clothings'
+  @clothing.quantity_sold = @clothing.quantity_sold + params[:clothing][:quantity_sold].to_f
+  @clothing.quantity_added = @clothing.quantity_added + params[:clothing][:quantity_added].to_f
+
+  if @clothing.save
+      flash[:notice] = "You have successfuly updated a piece."
+      redirect_to '/clothings'
+    else
+      render '/admins'
+    end
+
 end
 
 def destroy
