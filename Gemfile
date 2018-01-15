@@ -39,6 +39,8 @@ gem 'autoprefixer-rails'
 gem 'carrierwave'
 gem 'mini_magick', '~> 4.3'
 gem 'jquery-rails'
+gem 'devise', '~> 4.2'
+
 
 
 

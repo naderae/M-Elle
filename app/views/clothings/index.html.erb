@@ -6,7 +6,10 @@
   </head>
   <body>
     <input type="text" id="myInput" placeholder="Search...">
-    <%= link_to '<button>Add To Catalogue</button>'.html_safe, new_clothing_path %><br>
+
+    <% if current_user.try(:admin?) %>
+      <%= link_to '<button>Add To Catalogue</button>'.html_safe, new_clothing_path %><br>
+    <% end %>
 
 
     <% @clothings.each do |clothing| %>

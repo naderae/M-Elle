@@ -6,6 +6,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+
   </head>
 
   <body>
@@ -28,7 +29,8 @@
             </p>
 
               <ul id="sale-options">
-                <li><a href= '#' id="bodysuits" class="sale-category">BodySuits</a></li>
+
+                <li><%= link_to 'Bodysuits', '#', :remote => true, "data-type" => :json, id: "Bodysuits", class: "sale-category" %></li>
                 <li><a href="#"  id="Dresses" class="sale-category">Dresses</a></li>
                 <li><a href="#"  id="Jackets" class="sale-category">Jackets</a></li>
                 <li><a href="#"  id="Jeans" class="sale-category">Jeans</a></li>
@@ -63,10 +65,15 @@
           </div>
         </ul>
 
-
+        <% if current_user.try(:admin?) %>
+          <%= link_to 'Logout', destroy_user_session_path, :method => :delete %><br>
+          <%= link_to 'Administration', admins_path %>
+        <% end %>
 
           <div class="col-md-10 pull-right">
             <div class="main-content">
+              <p class="notice"><%= notice %></p>
+              <p class="alert"><%= alert %></p>
               <%= yield %>
             </div>
           </div>

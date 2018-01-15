@@ -12,11 +12,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
       var category = e.target.id;
       // console.log(category);
-
+      console.log(category);
       $.ajax({
         type: "POST",
         url: '/clothings/retrieve',
-        data: { category: category}
+        data: JSON.stringify({ category: category}),
+        dataType: "json",
+        success: function(){
+          alert("success!!");
+
+        },
+        error:function(){
+          alert("failure!")
+
+        }
       });
     });
   }

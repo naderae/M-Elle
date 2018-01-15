@@ -2,6 +2,7 @@ class ClothingsController < ApplicationController
 
 def index
   @clothings = Clothing.all
+
 end
 
 
@@ -51,7 +52,15 @@ end
 
 
 def retrieve
-  @clothings = Clothing.find_by(params[:category])
+  @clothings = Clothing.where(category: params[:category])
+  
+
+
+
+  respond_to do |format|
+        format.js {}
+  end
+
 end
 
 
