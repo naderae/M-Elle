@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Open+Sans+Condensed:300" rel="stylesheet">
 
 
   </head>
@@ -16,6 +17,10 @@
 
       <nav class="navbar navbar-light bg-faded">
         <a class="navbar-brand" href="#">M & Elle</a>
+        <% unless controller_name == "home" %>
+          <input type="text" id="myInput" placeholder="Search...">
+        <% end %>
+
 
       </nav>
 
@@ -23,6 +28,9 @@
         <ul class="col-md-2 pull-left">
           <div class="navigation">
 
+            <p>
+              <%= link_to "Full Catalogue", clothings_path, id: "catalogue-title" %>
+            </p>
 
             <p>
               <%= link_to "Sale", "#", id: "sale-title" %>
@@ -30,17 +38,17 @@
 
               <ul id="sale-options">
 
-                <li><%= link_to 'Bodysuits', '#', :remote => true, "data-type" => :json, id: "Bodysuits", class: "sale-category" %></li>
-                <li><a href="#"  id="Dresses" class="sale-category">Dresses</a></li>
-                <li><a href="#"  id="Jackets" class="sale-category">Jackets</a></li>
-                <li><a href="#"  id="Jeans" class="sale-category">Jeans</a></li>
-                <li><a href="#"  id="Pants" class="sale-category">Pants</a></li>
-                <li><a href="#"  id="Jumpsuits" class="sale-category">Jumpsuits</a></li>
-                <li><a href="#"  id="Leggings" class="sale-category">Leggings</a></li>
-                <li><a href="#"  id="Outfits" class="sale-category">Outfits</a></li>
-                <li><a href="#"  id="Skirts" class="sale-category">Skirts</a></li>
-                <li><a href="#"  id="Tops" class="sale-category">Tops</a></li>
-                <li><a href="#"  id="Tracksuits" class="sale-category">Tracksuits</a></li>
+                <li><%= link_to 'BODYSUITS', '#', :remote => true, "data-type" => :json, id: "Bodysuits", class: "sale-category" %></li>
+                <li><a href="#"  id="Dresses" class="sale-category">DRESSES</a></li>
+                <li><a href="#"  id="Jackets" class="sale-category">JACKETS</a></li>
+                <li><a href="#"  id="Jeans" class="sale-category">JEANS</a></li>
+                <li><a href="#"  id="Pants" class="sale-category">PANTS</a></li>
+                <li><a href="#"  id="Jumpsuits" class="sale-category">JUMPSUITS</a></li>
+                <li><a href="#"  id="Leggings" class="sale-category">LEGGINGS</a></li>
+                <li><a href="#"  id="Outfits" class="sale-category">OUTFITS</a></li>
+                <li><a href="#"  id="Skirts" class="sale-category">SKIRTS</a></li>
+                <li><a href="#"  id="Tops" class="sale-category">TOPS</a></li>
+                <li><a href="#"  id="Tracksuits" class="sale-category">TRACKSUITS</a></li>
               </ul>
 
 
@@ -65,10 +73,13 @@
           </div>
         </ul>
 
-        <% if current_user.try(:admin?) %>
-          <%= link_to 'Logout', destroy_user_session_path, :method => :delete %><br>
-          <%= link_to 'Administration', admins_path %>
-        <% end %>
+        <div class="admin-links">
+          <% if current_user.try(:admin?) %>
+            <%= link_to 'Logout', destroy_user_session_path, :method => :delete %><br>
+            <%= link_to 'Administration', admins_path %>
+          <% end %>
+        </div>
+
 
           <div class="col-md-10 pull-right">
             <div class="main-content">

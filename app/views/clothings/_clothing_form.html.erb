@@ -1,6 +1,6 @@
 
 
-<%= form_for @clothing, html: { multipart: true } do |f|%>
+<%= form_for @clothing, {html: { multipart: true }} do |f|%>
   <%= f.label :category %>
   <%= f.select :category, ['Bodysuits', 'Dresses', 'Jackets', 'Jeans', 'Pants', 'Jumpsuits', 'Leggings', 'Outfits', 'Skirts', 'Tops', 'Tracksuits'], :prompt => 'Select One' %><br>
 
@@ -13,15 +13,21 @@
   <%= f.label :price %>
   <%= f.number_field :price%><br>
 
+  <%= f.label :price_old %>
+  <%= f.number_field :price_old%><br>
+
   <%= f.label :quantity %>
   <%= f.number_field :quantity%><br>
 
   <%= f.label :description %>
   <%= f.text_area :description%><br>
 
-  <%= f.label :image %>
-  <%= f.file_field :image %><br>
-  
+  <%= f.label :images %>
+  <%= f.file_field :images, multiple: true %><br>
+
+  <%= f.label :images %>
+  <%= f.file_field :images, multiple: true %><br>
+
   <%= f.label :sale %>
   <%= f.select :sale, ['True', 'False'], :prompt => 'Select One'%><br>
 

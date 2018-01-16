@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       $.ajax({
         type: "POST",
         url: '/clothings/retrieve',
-        data: JSON.stringify({ category: category}),
+        data: JSON.stringify({ sale: 'True'}),
         dataType: "json",
         success: function(){
           alert("success!!");

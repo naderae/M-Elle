@@ -36,7 +36,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'autoprefixer-rails'
 
 # gem "paperclip", "~> 4.2"
-gem 'carrierwave'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'mini_magick', '~> 4.3'
 gem 'jquery-rails'
 gem 'devise', '~> 4.2'

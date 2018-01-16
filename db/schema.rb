@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180115145511) do
+ActiveRecord::Schema.define(version: 20180116132741) do
 
   create_table "clothings", force: :cascade do |t|
     t.string "category"
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 20180115145511) do
     t.string "new_collection"
     t.integer "quantity_sold", default: 0
     t.integer "quantity_added", default: 0
+    t.string "images"
+    t.integer "price_old"
   end
 
   create_table "users", force: :cascade do |t|

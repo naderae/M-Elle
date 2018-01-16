@@ -21,6 +21,9 @@ def create
   else
     render :new
   end
+  # @clothing.images[0].url
+  # @clothing.images[0].current_path
+  # @clothing.images[0].identifier
 end
 
 
@@ -53,12 +56,9 @@ end
 
 def retrieve
   @clothings = Clothing.where(category: params[:category])
-  
-
-
 
   respond_to do |format|
-        format.js {}
+      format.json
   end
 
 end
@@ -66,7 +66,7 @@ end
 
 private
   def clothing_params
-    params.require(:clothing).permit(:category, :color, :size, :price, :quantity, :description, :image, :sale, :new_collection)
+    params.require(:clothing).permit(:category, :color, :size, :price, :quantity, :description, {images: []}, :sale, :new_collection, :price_old)
   end
 
 end
