@@ -1,5 +1,5 @@
 
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("turbolinks:load", function(event) {
 
 
   var items = document.querySelectorAll('.sale-category');

@@ -1,6 +1,6 @@
 
 // $(document).ready(function () {
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("turbolinks:load", function(event) {
 
     var sale = document.getElementById('sale-title')
     var list = document.getElementById('sale-options');

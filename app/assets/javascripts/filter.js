@@ -1,5 +1,5 @@
 
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("turbolinks:load", function(event) {
 
 
   var input = document.getElementById('myInput');
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     var searchTerm = input.value.toUpperCase();
     var itemDescriptions = document.getElementsByClassName('item-description');
-  
+
 
     for (var i = 0; i < itemDescriptions.length; i++) {
 
