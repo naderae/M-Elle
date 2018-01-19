@@ -12,10 +12,10 @@ Rails.application.routes.draw do
   get 'admins' => 'admin#index'
   get 'admins/:category', to: 'admin#display', as: :admin
 
-  
+
   get 'contact', to: 'messages#new', as: 'contact'
   post 'contact', to: 'messages#create'
 
-  post '/clothings/retrieve/' => 'clothings#retrieve', :via  => :post
+  post '/clothings/fetch_items' => 'clothings#fetch_items', as: :fetch_items
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -15,8 +15,9 @@
 
       <nav class="navbar navbar-light bg-faded">
         <a class="navbar-brand" href="/home">M & Elle</a>
-        <% unless controller_name == "home" %>
-          <input type="text" id="myInput" placeholder="Search...">
+        <% unless controller_name == "home" || action_name == "show" %>
+          <input type="text" id="myInput" placeholder="Search..." class="filter-bar">
+
         <% end %>
 
 
@@ -36,17 +37,18 @@
 
               <ul id="sale-options">
 
-                <li><%= link_to 'BODYSUITS', '#', :remote => true, "data-type" => :json, id: "Bodysuits", class: "sale-category" %></li>
-                <li><a href="#"  id="Dresses" class="sale-category">DRESSES</a></li>
-                <li><a href="#"  id="Jackets" class="sale-category">JACKETS</a></li>
-                <li><a href="#"  id="Jeans" class="sale-category">JEANS</a></li>
-                <li><a href="#"  id="Pants" class="sale-category">PANTS</a></li>
-                <li><a href="#"  id="Jumpsuits" class="sale-category">JUMPSUITS</a></li>
-                <li><a href="#"  id="Leggings" class="sale-category">LEGGINGS</a></li>
-                <li><a href="#"  id="Outfits" class="sale-category">OUTFITS</a></li>
-                <li><a href="#"  id="Skirts" class="sale-category">SKIRTS</a></li>
-                <li><a href="#"  id="Tops" class="sale-category">TOPS</a></li>
-                <li><a href="#"  id="Tracksuits" class="sale-category">TRACKSUITS</a></li>
+                <li><%= link_to 'BODYSUITS', fetch_items_path, :remote => true, id: "Bodysuits", class: "sale-category" %></li>
+                <li><%= link_to 'DRESSES', fetch_items_path, :remote => true, id: "Dresses", class: "sale-category" %></li>
+                <li><%= link_to 'JACKETS', fetch_items_path, :remote => true, id: "Jackets", class: "sale-category" %></li>
+                <li><%= link_to 'JEANS', fetch_items_path, :remote => true, id: "Jeans", class: "sale-category" %></li>
+                <li><%= link_to 'PANTS', fetch_items_path, :remote => true, id: "Pants", class: "sale-category" %></li>
+                <li><%= link_to 'JUMPSUITS', fetch_items_path, :remote => true, id: "Jumpsuits", class: "sale-category" %></li>
+                <li><%= link_to 'LEGGINGS', fetch_items_path, :remote => true, id: "Leggings", class: "sale-category" %></li>
+                <li><%= link_to 'OUTFITS', fetch_items_path, :remote => true, id: "Outfits", class: "sale-category" %></li>
+                <li><%= link_to 'SKIRTS', fetch_items_path, :remote => true, id: "Skirts", class: "sale-category" %></li>
+                <li><%= link_to 'TOPS', fetch_items_path, :remote => true, id: "Tops", class: "sale-category" %></li>
+                <li><%= link_to 'TRACKSUITS', fetch_items_path, :remote => true, id: "Tracksuits", class: "sale-category" %></li>
+
               </ul>
 
 

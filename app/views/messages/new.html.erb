@@ -1,21 +1,37 @@
-<%= form_for @message, url: contact_path do |message_form| %>
-  <fieldset>
-    <div class="field">
-      <%= message_form.text_field :name, placeholder: "Name" %>
-    </div>
 
-    <div class="field">
-      <%= message_form.email_field :email, placeholder: "Email"%>
-    </div>
+<div id='contact'><a name='contact'></a></div>
+    <div class="contact">
+      <div class="contact-title">
+          <h1>Contact Us</h1>
+      </div>
+      <div class="contact-form">
 
-    <div class="field">
-      <%= message_form.text_area :content, placeholder: "Message"%>
-    </div>
-  </fieldset>
+        <%= form_for @message, url: contact_path do |message_form| %>
+          <ul class="form-style-1">
+            <fieldset>
+              <div class="field">
+                <%= message_form.label :name, class: "required" %>
+                <%= message_form.text_field :name, placeholder: "Name", class: "field-long" %>
+              </div>
 
-  <fieldset>
-    <div class="field">
-      <%= message_form.submit "Send" %>
+              <div class="field">
+                <%= message_form.label :email, class: "required" %>
+                <%= message_form.email_field :email, placeholder: "Email", class: "field-long"%>
+              </div>
+
+              <div class="field">
+                <%= message_form.label :content, 'Your Message', class: "required"%>
+                <%= message_form.text_area :content, placeholder: "Message", class: "field-long field-textarea"%>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <div class="field">
+                <%= message_form.submit "Send" %>
+              </div>
+            </fieldset>
+          </ul>
+
+        <% end %>
+      </div>
     </div>
-  </fieldset>
-<% end %>

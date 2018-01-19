@@ -12,22 +12,7 @@
     <% end %>
 
 
-    <% @clothings.each do |clothing| %>
-      <% if clothing.quantity %>
-        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle" >
-            <div class="item-pic"><%= link_to image_tag(clothing.images_urls[0].to_s), clothing_path(clothing.id) %></div><br>
-            <div class="item-info">
-              <span class="item-description"><%= clothing.description %> </span><br>
-              <% if clothing.price_old %>
-               <span class="old-price">
-                    $<%=  clothing.price_old %>
-               </span>
-             <% end %>
-             <span class="item-price">$<%= clothing.price %></span>
-            </div>
-        </div>
-      <% end %>
-    <% end %>
+    <%= render partial: 'clothing_categories', locals: { clothings: @clothings} %>
 
 
   </body>

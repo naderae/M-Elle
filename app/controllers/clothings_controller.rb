@@ -38,11 +38,11 @@ def update
   @clothing.quantity_added = @clothing.quantity_added + params[:clothing][:quantity_added].to_f
 
   if @clothing.save
-      flash[:notice] = "You have successfuly updated a piece."
-      redirect_to '/clothings'
-    else
-      render '/admins'
-    end
+    flash[:notice] = "You have successfuly updated a piece."
+    redirect_to '/clothings'
+  else
+    render '/clothings'
+  end
 
 end
 
@@ -54,11 +54,13 @@ def destroy
 end
 
 
-def retrieve
+def fetch_items
   @clothings = Clothing.where(category: params[:category])
 
   respond_to do |format|
-      format.json
+      format.json do
+        render json: {clothings: @clothings }
+      end
   end
 
 end

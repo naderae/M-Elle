@@ -13,6 +13,8 @@ class AdminController < ApplicationController
     @items = Clothing.where(category: params[:category])
   end
 
-  
+
+
+
 
 end

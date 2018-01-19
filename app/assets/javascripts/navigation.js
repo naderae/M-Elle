@@ -1,4 +1,4 @@
-
+//
 document.addEventListener("turbolinks:load", function(event) {
 
 
@@ -14,22 +14,15 @@ document.addEventListener("turbolinks:load", function(event) {
       // console.log(category);
       console.log(category);
       $.ajax({
-        type: "POST",
-        url: '/clothings/retrieve',
-        data: JSON.stringify({ sale: 'True'}),
-        dataType: "json",
-        success: function(){
-          alert("success!!");
+        method: "POST",
+        url: 'http://localhost:3000/clothings/fetch_items',
+        data: JSON.stringify({ category: category}),
+        dataType: "JSON"
+      }).done(function(data){
+          alert("success!");
+          console.log(data);
+        });
 
-        },
-        error:function(){
-          alert("failure!")
-
-        }
       });
-    });
-  }
-
-
-
+    };
 });

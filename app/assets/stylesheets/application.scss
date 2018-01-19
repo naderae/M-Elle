@@ -16,6 +16,8 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
 
 html{
   height: 100%;
@@ -65,7 +67,35 @@ html{
    float: right;
    margin-top: 5%;
    margin-right: 3%;
+   width: 110px;
+   -webkit-transition: width 0.4s ease-in-out;
+   transition: width 0.4s ease-in-out;
+   border: 3px solid #5A0000;
+
+   padding: 5px;
+   height: 20px;
+   border-radius: 5px;
+   outline: none;
+
  }
+
+ .searchButton{
+  position: absolute;
+  right: -50px;
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+ }
+
+ .filter-bar:focus {
+    width: 18%;
+}
 
  .gallery_product{
    margin-top: 10px;
@@ -230,4 +260,114 @@ html{
 
 .terms-of-service{
   margin-top: 50px;
+}
+
+.contact{
+  height: 550px;
+}
+
+.contact-title h1{
+  text-align: center;
+  /*background-color: white;*/
+  margin-bottom: 88px;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 40px;
+  color: black;
+}
+
+
+.form-style-1 {
+    margin:10px auto;
+    max-width: 400px;
+    padding: 20px 12px 10px 20px;
+    font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+.form-style-1 li {
+    padding: 0;
+    display: block;
+    list-style: none;
+    margin: 10px 0 0 0;
+}
+.form-style-1 label{
+    margin:0 0 3px 0;
+    padding:0px;
+    display:block;
+    font-weight: bold;
+}
+.form-style-1 input[type=text],
+.form-style-1 input[type=date],
+.form-style-1 input[type=datetime],
+.form-style-1 input[type=number],
+.form-style-1 input[type=search],
+.form-style-1 input[type=time],
+.form-style-1 input[type=url],
+.form-style-1 input[type=email],
+textarea,
+select{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border:1px solid #BEBEBE;
+    padding: 7px;
+    margin:0px;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+}
+.form-style-1 input[type=text]:focus,
+.form-style-1 input[type=date]:focus,
+.form-style-1 input[type=datetime]:focus,
+.form-style-1 input[type=number]:focus,
+.form-style-1 input[type=search]:focus,
+.form-style-1 input[type=time]:focus,
+.form-style-1 input[type=url]:focus,
+.form-style-1 input[type=email]:focus,
+.form-style-1 textarea:focus,
+.form-style-1 select:focus{
+    -moz-box-shadow: 0 0 8px #800020;
+    -webkit-box-shadow: 0 0 8px #800020;
+    box-shadow: 0 0 8px #800020;
+    border: 1px solid #800020;
+}
+.form-style-1 .field-divided{
+    width: 49%;
+}
+
+.form-style-1 .field-long{
+    width: 100%;
+}
+.form-style-1 .field-select{
+    width: 100%;
+}
+.form-style-1 .field-textarea{
+    height: 100px;
+}
+.form-style-1 input[type=submit], .form-style-1 input[type=button]{
+    background: #4B99AD;
+    padding: 8px 15px 8px 15px;
+    border: none;
+    color: #fff;
+}
+.form-style-1 input[type=submit]:hover, .form-style-1 input[type=button]:hover{
+    background: #4691A4;
+    box-shadow:none;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+}
+.form-style-1 .required{
+    color:black;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td{
+  text-align: center;
+}
+
+.administration_form{
+  float: right;
 }
