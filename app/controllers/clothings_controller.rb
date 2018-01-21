@@ -39,9 +39,9 @@ def update
 
   if @clothing.save
     flash[:notice] = "You have successfuly updated a piece."
-    redirect_to '/clothings'
+    redirect_to admins_path
   else
-    render '/clothings'
+    render admin_path
   end
 
 end
@@ -55,7 +55,9 @@ end
 
 
 def fetch_items
-  @clothings = Clothing.where(category: params[:category])
+  
+
+  @clothings = Clothing.where(category: params[:category]).where(sale: params[:list_type])
 
   respond_to do |format|
       format.json do

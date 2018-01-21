@@ -9,6 +9,7 @@
       <div class="col-lg-6">
       <table>
         <tr>
+          <th>item id</th>
           <th>Category</th>
           <th>Description</th>
           <th>Color</th>
@@ -20,6 +21,7 @@
 
         <tr>
           <% @items.each do |item| %>
+            <td><%= item.id %></td>
             <td><%= item.category %></td>
             <td><%= item.description %></td>
             <td><%= item.color %></td>
@@ -33,9 +35,9 @@
         <div class="col-lg-4">
           <%= form_for item do |f| %>
             <%= f.label :quantity_sold %>
-            <%= f.number_field :quantity_sold %>
-            <%= f.label :quantity_added %>
-            <%= f.number_field :quantity_added %><br>
+            <%= f.number_field :quantity_sold, :value => 0 %>
+            <%= f.label :quantity_added  %>
+            <%= f.number_field :quantity_added, :value => 0 %><br>
             <%= f.submit "Update" %>
           <% end %>
         </div>

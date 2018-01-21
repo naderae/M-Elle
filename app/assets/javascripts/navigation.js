@@ -10,19 +10,23 @@ document.addEventListener("turbolinks:load", function(event) {
 
       e.preventDefault()
 
-      var category = e.target.id;
-      // console.log(category);
+      var category = $(this).data('cat');
+      var list_type = $(this).data('list-type')
+
+
       console.log(category);
+      console.log(list_type);
       $.ajax({
         method: "POST",
         url: 'http://localhost:3000/clothings/fetch_items',
-        data: JSON.stringify({ category: category}),
+        data: { category: category, list_type: list_type},
         dataType: "JSON"
       }).done(function(data){
           alert("success!");
           console.log(data);
+
         });
 
       });
     };
-});
+  });
