@@ -55,15 +55,17 @@ end
 
 
 def fetch_items
-  
+
 
   @clothings = Clothing.where(category: params[:category]).where(sale: params[:list_type])
+
 
   respond_to do |format|
       format.json do
         render json: {clothings: @clothings }
       end
   end
+
 
 end
 
