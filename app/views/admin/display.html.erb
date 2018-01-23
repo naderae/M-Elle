@@ -29,7 +29,7 @@
               <div class="rTableCell"><%= item.quantity_sold %></div>
               <div class="rTableCell"><%= item.quantity_added %></div>
               <div class="rTableCell"><%= item.quantity + item.quantity_added - item.quantity_sold %></div>
-              <%= form_for item do |f| %>
+              <%= form_for item, :url => update_stock_path(item.id) do |f| %>
                 <div class="rTableCell"><%= f.label :quantity_added, 'ADD' %></div>
                 <div class="rTableCell"><%= f.number_field :quantity_added, :value => 0 %></div>
                 <div class="rTableCell"><%= f.label :quantity_sold, 'Remove' %></div>

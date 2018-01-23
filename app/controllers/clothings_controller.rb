@@ -46,9 +46,6 @@ def update
 
 end
 
-def updateStock
-  
-end
 
 def destroy
   @clothing = Clothing.find(params[:id])
@@ -71,6 +68,21 @@ def fetch_items
   end
 
 
+end
+
+def update_stock
+
+
+  @clothing = Clothing.find(params[:id])
+  @clothing.quantity_sold = @clothing.quantity_sold + params[:clothing][:quantity_sold].to_f
+  @clothing.quantity_added = @clothing.quantity_added + params[:clothing][:quantity_added].to_f
+
+  if @clothing.save
+    flash[:notice] = "You have successfuly updated a piece."
+    redirect_to admin_path(@clothing.category)
+  else
+    render admins_path
+  end
 end
 
 
