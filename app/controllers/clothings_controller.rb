@@ -57,8 +57,8 @@ end
 
 def fetch_items
 
+  @clothings = Clothing.where(category: params[:category]).where(sale: params[:sale])
 
-  @clothings = Clothing.where(category: params[:category]).where(sale: params[:list_type])
 
 
   respond_to do |format|
@@ -67,18 +67,15 @@ def fetch_items
       end
   end
 
-
 end
 
 def update_stock
-
-
   @clothing = Clothing.find(params[:id])
   @clothing.quantity_sold = @clothing.quantity_sold + params[:clothing][:quantity_sold].to_f
   @clothing.quantity_added = @clothing.quantity_added + params[:clothing][:quantity_added].to_f
 
   if @clothing.save
-    flash[:notice] = "You have successfuly updated a piece."
+    flash[:notice] = "You have successfuly Your Stock."
     redirect_to admin_path(@clothing.category)
   else
     render admins_path

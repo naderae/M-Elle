@@ -5,40 +5,41 @@
     <title></title>
   </head>
   <body>
-    <h2>Phone numbers</h2>
-      <div class="rTable">
-          <div class="rTableRow">
-            <div class="rTableHead"><strong>ID</strong></div>
-            <div class="rTableHead"><span style="font-weight: bold;">Category</span></div>
-            <div class="rTableHead"><span style="font-weight: bold;">Description</span></div>
-            <div class="rTableHead"><span style="font-weight: bold;">color</span></div>
-            <div class="rTableHead"><span style="font-weight: bold;">init quantity</span></div>
-            <div class="rTableHead"><span style="font-weight: bold;">Q sold</span></div>
-            <div class="rTableHead"><span style="font-weight: bold;">Q Added</span></div>
-            <div class="rTableHead"><span style="font-weight: bold;">Remaining</span></div>
-            <div class="rTableHead"><span style="font-weight: bold;">Update Stock</span></div>
-
-          </div>
-          <% @items.each do |item| %>
+    <div class="admin-stuff">
+      <h2>STOCK MANAGEMENT</h2>
+        <div class="rTable">
             <div class="rTableRow">
-              <div class="rTableCell"><%= item.id %></div>
-              <div class="rTableCell"><%= item.category %></div>
-              <div class="rTableCell"><%= item.description %></div>
-              <div class="rTableCell"><%= item.color %></li></div>
-              <div class="rTableCell"><%= item.quantity %></div>
-              <div class="rTableCell"><%= item.quantity_sold %></div>
-              <div class="rTableCell"><%= item.quantity_added %></div>
-              <div class="rTableCell"><%= item.quantity + item.quantity_added - item.quantity_sold %></div>
-              <%= form_for item, :url => update_stock_path(item.id) do |f| %>
-                <div class="rTableCell"><%= f.label :quantity_added, 'ADD' %></div>
-                <div class="rTableCell"><%= f.number_field :quantity_added, :value => 0 %></div>
-                <div class="rTableCell"><%= f.label :quantity_sold, 'Remove' %></div>
-                <div class="rTableCell"><%= f.number_field :quantity_sold, :value => 0 %></div>
-                <div class="rTableCell"><%= f.submit "Update" %></div>
-              <% end %>
-            </div>
-          <% end %>
-      </div>
+              <div class="rTableHead"><strong>ID</strong></div>
+              <div class="rTableHead"><span style="font-weight: bold;">Category</span></div>
+              <div class="rTableHead"><span style="font-weight: bold;">Description</span></div>
+              <div class="rTableHead"><span style="font-weight: bold;">color</span></div>
+              <div class="rTableHead"><span style="font-weight: bold;">init quantity</span></div>
+              <div class="rTableHead"><span style="font-weight: bold;">Q sold</span></div>
+              <div class="rTableHead"><span style="font-weight: bold;">Q Added</span></div>
+              <div class="rTableHead"><span style="font-weight: bold;">Remaining</span></div>
+              <div class="rTableHead"><span style="font-weight: bold;">Update Stock</span></div>
 
+            </div>
+            <% @items.each do |item| %>
+              <div class="rTableRow">
+                <div class="rTableCell"><%= item.id %></div>
+                <div class="rTableCell"><%= item.category %></div>
+                <div class="rTableCell"><%= item.description %></div>
+                <div class="rTableCell"><%= item.color %></li></div>
+                <div class="rTableCell"><%= item.quantity %></div>
+                <div class="rTableCell"><%= item.quantity_sold %></div>
+                <div class="rTableCell"><%= item.quantity_added %></div>
+                <div class="rTableCell"><strong><%= item.quantity + item.quantity_added - item.quantity_sold %></strong></div>
+                <%= form_for item, :url => update_stock_path(item.id), :html => {:class => 'stock_form'} do |f| %>
+                  <div class="rTableCell"><%= f.label :quantity_added, 'ADD' %></div>
+                  <div class="rTableCell"><%= f.number_field :quantity_added, :value => 0, :class => 'stock_form_field' %></div>
+                  <div class="rTableCell"><%= f.label :quantity_sold, 'Remove' %></div>
+                  <div class="rTableCell"><%= f.number_field :quantity_sold, :value => 0, :class => 'stock_form_field' %></div>
+                  <div class="rTableCell"><%= f.submit "Update" %></div>
+                <% end %>
+              </div>
+            <% end %>
+        </div>
+     </div>
   </body>
 </html>

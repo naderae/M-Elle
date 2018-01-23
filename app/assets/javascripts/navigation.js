@@ -11,15 +11,15 @@ document.addEventListener("turbolinks:load", function(event) {
       e.preventDefault()
 
       var category = $(this).data('cat');
-      var list_type = $(this).data('list-type');
+      var sale = $(this).data('sale');
 
 
       console.log(category);
-      console.log(list_type);
+      console.log(sale);
       $.ajax({
         method: "POST",
-        url: 'http://localhost:3000/clothings/fetch_items',
-        data: { category: category, list_type: list_type},
+        url: 'clothings/fetch_items/',
+        data: { category: category, sale: sale},
         dataType: "JSON"
       }).done(function(data){
             // alert("success!");
