@@ -46,6 +46,10 @@ def update
 
 end
 
+def updateStock
+  
+end
+
 def destroy
   @clothing = Clothing.find(params[:id])
   @clothing.destroy

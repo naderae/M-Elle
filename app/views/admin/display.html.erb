@@ -5,49 +5,40 @@
     <title></title>
   </head>
   <body>
-    <div class="row">
-      <div class="col-lg-6">
-      <table>
-        <tr>
-          <th>item id</th>
-          <th>Category</th>
-          <th>Description</th>
-          <th>Color</th>
-          <th>Initial Quantity</th>
-          <th>Q Sold</th>
-          <th>Q Added</th>
-          <th>Q Remaining</th>
-        </tr>
+    <h2>Phone numbers</h2>
+      <div class="rTable">
+          <div class="rTableRow">
+            <div class="rTableHead"><strong>ID</strong></div>
+            <div class="rTableHead"><span style="font-weight: bold;">Category</span></div>
+            <div class="rTableHead"><span style="font-weight: bold;">Description</span></div>
+            <div class="rTableHead"><span style="font-weight: bold;">color</span></div>
+            <div class="rTableHead"><span style="font-weight: bold;">init quantity</span></div>
+            <div class="rTableHead"><span style="font-weight: bold;">Q sold</span></div>
+            <div class="rTableHead"><span style="font-weight: bold;">Q Added</span></div>
+            <div class="rTableHead"><span style="font-weight: bold;">Remaining</span></div>
+            <div class="rTableHead"><span style="font-weight: bold;">Update Stock</span></div>
 
-        <tr>
+          </div>
           <% @items.each do |item| %>
-            <td><%= item.id %></td>
-            <td><%= item.category %></td>
-            <td><%= item.description %></td>
-            <td><%= item.color %></td>
-            <td><%= item.quantity %></td>
-            <td><%= item.quantity_sold %></td>
-            <td><%= item.quantity_added %></td>
-            <td><%= item.quantity + item.quantity_added - item.quantity_sold %></td>
-        </tr>
-      </table>
-    </div>
-        <div class="col-lg-4">
-          <%= form_for item do |f| %>
-            <%= f.label :quantity_sold %>
-            <%= f.number_field :quantity_sold, :value => 0 %>
-            <%= f.label :quantity_added  %>
-            <%= f.number_field :quantity_added, :value => 0 %><br>
-            <%= f.submit "Update" %>
+            <div class="rTableRow">
+              <div class="rTableCell"><%= item.id %></div>
+              <div class="rTableCell"><%= item.category %></div>
+              <div class="rTableCell"><%= item.description %></div>
+              <div class="rTableCell"><%= item.color %></li></div>
+              <div class="rTableCell"><%= item.quantity %></div>
+              <div class="rTableCell"><%= item.quantity_sold %></div>
+              <div class="rTableCell"><%= item.quantity_added %></div>
+              <div class="rTableCell"><%= item.quantity + item.quantity_added - item.quantity_sold %></div>
+              <%= form_for item do |f| %>
+                <div class="rTableCell"><%= f.label :quantity_added, 'ADD' %></div>
+                <div class="rTableCell"><%= f.number_field :quantity_added, :value => 0 %></div>
+                <div class="rTableCell"><%= f.label :quantity_sold, 'Remove' %></div>
+                <div class="rTableCell"><%= f.number_field :quantity_sold, :value => 0 %></div>
+                <div class="rTableCell"><%= f.submit "Update" %></div>
+              <% end %>
+            </div>
           <% end %>
-        </div>
-
-      <% end %>
-    </div>
-
-
-
-
+      </div>
 
   </body>
 </html>
