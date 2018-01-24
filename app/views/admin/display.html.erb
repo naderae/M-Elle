@@ -5,6 +5,7 @@
     <title></title>
   </head>
   <body>
+   <% if current_user.try(:admin?) %>
     <div class="admin-stuff">
       <h2>STOCK MANAGEMENT</h2>
         <div class="rTable">
@@ -41,5 +42,6 @@
             <% end %>
         </div>
      </div>
+    <% end %>
   </body>
 </html>

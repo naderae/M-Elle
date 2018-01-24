@@ -5,7 +5,7 @@
     <title></title>
   </head>
   <body>
-
+   <% if current_user.try(:admin?) %>
 
   <table style="width:45%">
     <tr>
@@ -26,6 +26,6 @@
 
 
 
-
+<% end %>
   </body>
 </html>

@@ -15,8 +15,8 @@
 
       <nav class="navbar navbar-light bg-faded">
         <a class="navbar-brand" href="/home">M & Elle</a>
-        <% unless controller_name == "home" || action_name == "show" || controller_name == 'admin' %>
-          <input type="text" id="myInput" placeholder="Search..." class="filter-bar">
+        <% unless  action_name == "show" || controller_name == 'admin' %>
+          <input type="text" id="myInput" placeholder="Search..." class="filter-bar" >
 
         <% end %>
 
@@ -28,7 +28,9 @@
           <div class="navigation">
 
             <p>
-              <%= link_to "Full Catalogue", clothings_path, id: "catalogue-title" %>
+              <% if current_user.try(:admin?) %>
+                <%= link_to "Full Catalogue", clothings_path, id: "catalogue-title" %>
+              <% end %>
             </p>
 
             <p>
@@ -106,7 +108,7 @@
 
             <div class="social-media">
               <div class="social-all">
-                <h3 id="social-media-title" >Check us Out on Social Media</h3>
+                <h3 id="social-media-title" >Check us out on social edia</h3>
                 <div class="social-media-icons">
                   <a id="instagram" href="https://www.instagram.com/m.and.elle/" target="_blank"><img src="/assets/instagram.png"></a>
                   <a id="facebook" href="https://www.facebook.com/quickoutfit/?ref=br_rs" target="_blank"><img src="/assets/facebook.png"></a>
@@ -119,7 +121,7 @@
                     <a href="#">Terms of Service</a> | <a href="#">Privacy</a>
                   </div>
                   <div class="col-md-4">
-                    <p class="muted pull-right">© 2018 MandELLE. All rights reserved</p>
+                    <p class="muted pull-right">© 2018 M & ELLE. All rights reserved</p>
                   </div>
                 </div>
               </div>

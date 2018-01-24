@@ -71,7 +71,7 @@ html{
    -webkit-transition: width 0.4s ease-in-out;
    transition: width 0.4s ease-in-out;
    border: 3px solid #5A0000;
-
+   
    padding: 5px;
    height: 20px;
    border-radius: 5px;
@@ -91,7 +91,9 @@ html{
   border-radius: 5px;
   cursor: pointer;
   font-size: 20px;
+
  }
+
 
  .filter-bar:focus {
     width: 18%;
@@ -229,7 +231,7 @@ html{
 
 .social-media{
   position: relative;
-  top: 300px;
+  top: 350px;
 }
 
 .social-all{
