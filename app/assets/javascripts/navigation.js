@@ -31,7 +31,7 @@ document.addEventListener("turbolinks:load", function(event) {
           parsed_data["clothings"]
 
           $('.landing').css('background-image', 'none');
-          $('.page-content').html("")
+          $('.outer').css('background-image', 'none');
 
           for (var i = 0; i < parsed_data["clothings"].length; i++) {
             if (parsed_data["clothings"][i].price_old) {

@@ -2,6 +2,11 @@
 // $(document).ready(function () {
 document.addEventListener("turbolinks:load", function(event) {
 
+
+    var container = document.querySelector('.container');
+    var outer = document.querySelector('.outer');
+    var page_body = document.querySelector('.page-content');
+
     var sale = document.getElementById('sale-title')
     var list = document.getElementById('sale-options');
 
@@ -10,10 +15,24 @@ document.addEventListener("turbolinks:load", function(event) {
 
       e.preventDefault()
 
+
+
       if (list.style.display == 'none') {
         list.style.display = 'block';
+        page_body.innerHTML = "";
+        outer.style.backgroundImage = "url('/assets/landing.jpg')";
+        // var div = document.createElement("div");
+        // page_body.appendChild(div)
+        // div.style.backgroundImage = "url('/assets/landing.jpg')";
+
       } else {
         list.style.display = 'none';
+        page_body.innerHTML = "";
+        outer.style.backgroundImage = "url('/assets/landing.jpg')";
+        // var div = document.createElement("div");
+        // page_body.appendChild(div)
+        // div.style.backgroundImage = "url('/assets/landing.jpg')";
+
       }
     });
 
@@ -29,8 +48,15 @@ document.addEventListener("turbolinks:load", function(event) {
 
       if (list_two.style.display == 'none') {
         list_two.style.display = 'block';
+        page_body.innerHTML = "";
+        outer.style.backgroundImage = "url('/assets/landing.jpg') ";
+        // outer.style.backgroundSize = "100%";
+
       } else {
         list_two.style.display = 'none';
+        page_body.innerHTML = "";
+        outer.style.backgroundImage = "url('/assets/landing.jpg') ";
+        // outer.style.backgroundSize = "100%";
       }
     });
 

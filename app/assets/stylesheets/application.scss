@@ -71,7 +71,7 @@ html{
    -webkit-transition: width 0.4s ease-in-out;
    transition: width 0.4s ease-in-out;
    border: 3px solid #5A0000;
-   
+
    padding: 5px;
    height: 20px;
    border-radius: 5px;
@@ -159,6 +159,10 @@ html{
    background-repeat: no-repeat;
    // background-size: contain;
  }
+ .outer{
+   height: 100%;
+ }
+
 
  // .item-pic{
  //   max-height:245px;
