@@ -5,7 +5,7 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Open+Sans+Condensed:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Open+Sans+Condensed:300|Dancing+Script|Poiret+One|Handlee" rel="stylesheet">
 
 
   <body>
@@ -16,7 +16,7 @@
     <div class="container">
 
       <nav class="navbar navbar-light bg-faded">
-        <a class="navbar-brand" href="/home">M & Elle</a>
+        <a class="navbar-brand" id="logo-a" href="/home"><img src="/assets/cutmypic1.png" id="logo-img"></a>
         <% unless  action_name == "show" || controller_name == 'admin' %>
           <input type="text" id="myInput" placeholder="Search..." class="filter-bar" >
 
@@ -35,48 +35,61 @@
               <% end %>
             </p>
 
-            <p>
-              <%= link_to "Sale", "#", id: "sale-title" %>
-            </p>
-
-              <ul id="sale-options">
-
-                <li><%= link_to 'BODYSUITS', fetch_items_path, :remote => true, :data => { :cat => 'Bodysuits', :sale => 'True' }, class: "sale-category" %></li>
-                <li><%= link_to 'DRESSES', fetch_items_path, :remote => true, :data => { :cat => 'Dresses', :sale => 'True' }, class: "sale-category" %></li>
-                <li><%= link_to 'JACKETS', fetch_items_path, :remote => true, :data => { :cat => 'Jackets', :sale => 'True' }, class: "sale-category" %></li>
-                <li><%= link_to 'JEANS', fetch_items_path, :remote => true, :data => { :cat => 'Jeans', :sale => 'True' }, class: "sale-category" %></li>
-                <li><%= link_to 'PANTS', fetch_items_path, :remote => true, :data => { :cat => 'Pants', :sale => 'True' }, class: "sale-category" %></li>
-                <li><%= link_to 'JUMPSUITS', fetch_items_path, :remote => true, :data => { :cat => 'Jumpsuits', :sale => 'True' }, class: "sale-category" %></li>
-                <li><%= link_to 'LEGGINGS', fetch_items_path, :remote => true, :data => { :cat => 'Leggings', :sale => 'True' }, class: "sale-category" %></li>
-                <li><%= link_to 'OUTFITS', fetch_items_path, :remote => true, :data => { :cat => 'Outfits', :sale => 'True' }, class: "sale-category" %></li>
-                <li><%= link_to 'SKIRTS', fetch_items_path, :remote => true, :data => { :cat => 'Skirts', :sale => 'True' }, class: "sale-category" %></li>
-                <li><%= link_to 'TOPS', fetch_items_path, :remote => true, :data => { :cat => 'Tops', :sale => 'True' }, class: "sale-category" %></li>
-                <li><%= link_to 'TRACKSUITS', fetch_items_path, :remote => true, :data => { :cat => 'Tracksuits', :sale => 'True' }, class: "sale-category" %></li>
-
-              </ul>
-
+            <% if action_name != "show" %>
 
               <p>
-                <%= link_to "New Collection", "#", id: "new-collection-title" %>
+                <%= link_to "Sale", "#", id: "sale-title" %>
               </p>
 
-              <ul id="new-collection-options">
-                <li><%= link_to 'BODYSUITS', fetch_items_path, :remote => true, :data => { :cat => 'Bodysuits', :sale => 'False' }, class: "sale-category" %></li>
-                <li><%= link_to 'DRESSES', fetch_items_path, :remote => true, :data => { :cat => 'Dresses', :sale => 'False' }, class: "sale-category" %></li>
-                <li><%= link_to 'JACKETS', fetch_items_path, :remote => true, :data => { :cat => 'Jackets', :sale => 'False' }, class: "sale-category" %></li>
-                <li><%= link_to 'JEANS', fetch_items_path, :remote => true, :data => { :cat => 'Jeans', :sale => 'False' }, class: "sale-category" %></li>
-                <li><%= link_to 'PANTS', fetch_items_path, :remote => true, :data => { :cat => 'Pants', :sale => 'False' }, class: "sale-category" %></li>
-                <li><%= link_to 'JUMPSUITS', fetch_items_path, :remote => true, :data => { :cat => 'Jumpsuits', :sale => 'False' }, class: "sale-category" %></li>
-                <li><%= link_to 'LEGGINGS', fetch_items_path, :remote => true, :data => { :cat => 'Leggings', :sale => 'False' }, class: "sale-category" %></li>
-                <li><%= link_to 'OUTFITS', fetch_items_path, :remote => true, :data => { :cat => 'Outfits', :sale => 'False' }, class: "sale-category" %></li>
-                <li><%= link_to 'SKIRTS', fetch_items_path, :remote => true, :data => { :cat => 'Skirts', :sale => 'False' }, class: "sale-category" %></li>
-                <li><%= link_to 'TOPS', fetch_items_path, :remote => true, :data => { :cat => 'Tops', :sale => 'False' }, class: "sale-category" %></li>
-                <li><%= link_to 'TRACKSUITS', fetch_items_path, :remote => true, :data => { :cat => 'Tracksuits', :sale => 'False' }, class: "sale-category" %></li>
-              </ul>
+                <ul id="sale-options">
+
+                  <li><%= link_to 'BODYSUITS', fetch_items_path, :remote => true, :data => { :cat => 'Bodysuits', :sale => 'True' }, class: "sale-category" %></li>
+                  <li><%= link_to 'DRESSES', fetch_items_path, :remote => true, :data => { :cat => 'Dresses', :sale => 'True' }, class: "sale-category" %></li>
+                  <li><%= link_to 'JACKETS', fetch_items_path, :remote => true, :data => { :cat => 'Jackets', :sale => 'True' }, class: "sale-category" %></li>
+                  <li><%= link_to 'JEANS', fetch_items_path, :remote => true, :data => { :cat => 'Jeans', :sale => 'True' }, class: "sale-category" %></li>
+                  <li><%= link_to 'PANTS', fetch_items_path, :remote => true, :data => { :cat => 'Pants', :sale => 'True' }, class: "sale-category" %></li>
+                  <li><%= link_to 'JUMPSUITS', fetch_items_path, :remote => true, :data => { :cat => 'Jumpsuits', :sale => 'True' }, class: "sale-category" %></li>
+                  <li><%= link_to 'LEGGINGS', fetch_items_path, :remote => true, :data => { :cat => 'Leggings', :sale => 'True' }, class: "sale-category" %></li>
+                  <li><%= link_to 'OUTFITS', fetch_items_path, :remote => true, :data => { :cat => 'Outfits', :sale => 'True' }, class: "sale-category" %></li>
+                  <li><%= link_to 'SKIRTS', fetch_items_path, :remote => true, :data => { :cat => 'Skirts', :sale => 'True' }, class: "sale-category" %></li>
+                  <li><%= link_to 'TOPS', fetch_items_path, :remote => true, :data => { :cat => 'Tops', :sale => 'True' }, class: "sale-category" %></li>
+                  <li><%= link_to 'TRACKSUITS', fetch_items_path, :remote => true, :data => { :cat => 'Tracksuits', :sale => 'True' }, class: "sale-category" %></li>
+
+                </ul>
+
+
+                <p id="n-collection-title">
+                  <%= link_to "New Collection", "#", id: "new-collection-title" %>
+                </p>
+
+                <ul id="new-collection-options">
+                  <li><%= link_to 'BODYSUITS', fetch_items_path, :remote => true, :data => { :cat => 'Bodysuits', :sale => 'False' }, class: "sale-category" %></li>
+                  <li><%= link_to 'DRESSES', fetch_items_path, :remote => true, :data => { :cat => 'Dresses', :sale => 'False' }, class: "sale-category" %></li>
+                  <li><%= link_to 'JACKETS', fetch_items_path, :remote => true, :data => { :cat => 'Jackets', :sale => 'False' }, class: "sale-category" %></li>
+                  <li><%= link_to 'JEANS', fetch_items_path, :remote => true, :data => { :cat => 'Jeans', :sale => 'False' }, class: "sale-category" %></li>
+                  <li><%= link_to 'PANTS', fetch_items_path, :remote => true, :data => { :cat => 'Pants', :sale => 'False' }, class: "sale-category" %></li>
+                  <li><%= link_to 'JUMPSUITS', fetch_items_path, :remote => true, :data => { :cat => 'Jumpsuits', :sale => 'False' }, class: "sale-category" %></li>
+                  <li><%= link_to 'LEGGINGS', fetch_items_path, :remote => true, :data => { :cat => 'Leggings', :sale => 'False' }, class: "sale-category" %></li>
+                  <li><%= link_to 'OUTFITS', fetch_items_path, :remote => true, :data => { :cat => 'Outfits', :sale => 'False' }, class: "sale-category" %></li>
+                  <li><%= link_to 'SKIRTS', fetch_items_path, :remote => true, :data => { :cat => 'Skirts', :sale => 'False' }, class: "sale-category" %></li>
+                  <li><%= link_to 'TOPS', fetch_items_path, :remote => true, :data => { :cat => 'Tops', :sale => 'False' }, class: "sale-category" %></li>
+                  <li><%= link_to 'TRACKSUITS', fetch_items_path, :remote => true, :data => { :cat => 'Tracksuits', :sale => 'False' }, class: "sale-category" %></li>
+                </ul>
+
+              <% else %>
+
+              <p>
+                <a href="javascript:history.back()" id="back">Back</a>
+              </p>
+
+              <% end %>
+
+
 
               <p>
                 <%= link_to "Contact Us", contact_path, id: "contact-us-title" %>
               </p>
+
 
 
 
@@ -110,7 +123,7 @@
 
             <div class="social-media">
               <div class="social-all">
-                <h3 id="social-media-title" >Check us out on social edia</h3>
+                <h3 id="social-media-title" >Check us out on Social Media</h3>
                 <div class="social-media-icons">
                   <a id="instagram" href="https://www.instagram.com/m.and.elle/" target="_blank"><img src="/assets/instagram.png"></a>
                   <a id="facebook" href="https://www.facebook.com/quickoutfit/?ref=br_rs" target="_blank"><img src="/assets/facebook.png"></a>

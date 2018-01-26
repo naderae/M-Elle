@@ -21,6 +21,7 @@
 
 html{
   height: 100%;
+
   // border-top: solid 5px black;
   // border-right: solid 5px black;
   // border-left: solid 5px black;
@@ -30,6 +31,7 @@ html{
  body{
    width: 100%;
    height: 100%;
+   background-color: #fffffa
 
  }
 
@@ -79,6 +81,15 @@ html{
 
  }
 
+
+ #logo-img{
+   width: 115px;
+   height: 65px;
+   position:relative;
+   bottom: 35px;
+   right: 35px;
+ }
+
  .searchButton{
   position: absolute;
   right: -50px;
@@ -108,12 +119,16 @@ html{
    display: none;
    list-style-type: none;
    color: black;
+
  }
  #sale-options a{
    color: black;
-   font-weight: bold;
-   font-size: 15px;
+   font-family: 'Poiret One', cursive;
+
+   font-size: 13px;
  }
+
+
 
  #new-collection-options{
    display: none;
@@ -123,30 +138,36 @@ html{
 
  #new-collection-options a{
    color: black;
-   font-weight: bold;
-   font-size: 15px;
+   font-family: 'Poiret One', cursive;
+   // font-weight: bold;
+   font-size: 13px;
  }
  #sale-title{
-   font-family: 'Archivo Black', sans-serif;
-   font-size: 25px;
+   font-family:'Dancing Script', cursive;
+   font-size: 30px;
    color: #800020;
+   text-decoration: none;
  }
  #catalogue-title{
-   font-family: 'Archivo Black', sans-serif;
+   font-family: 'Dancing Script', cursive;
    font-size: 25px;
    color: #800020;
  }
  #new-collection-title{
-   font-family: 'Archivo Black', sans-serif;
-   font-size: 25px;
+   font-family: 'Dancing Script', cursive;
+   font-size: 30px;
    color: #800020;
+   text-decoration: none;
+
  }
+
  #contact-us-title{
-   font-family: 'Archivo Black', sans-serif;
-   font-size: 20px;
+   font-family: 'Dancing Script', cursive;
+   font-size: 30px;
    color: black;
    position: relative;
-   top: 75px;
+   top: 100px;
+   text-decoration: none;
  }
 
  .admin-links{
@@ -154,13 +175,14 @@ html{
  }
 
  .landing{
-   background-image: url('/assets/landing.jpg');
+   background: #fffffa url('/assets/loading.png');
    background-size: auto 100%;
    background-repeat: no-repeat;
-   // background-size: contain;
+   background-position: center;
+
  }
  .outer{
-   height: 100%;
+   height: 800px;
    width: 100%;
  }
 
@@ -215,7 +237,9 @@ html{
    font-weight: bolder;
  }
 
-
+.field{
+  margin: 10px 0;
+}
 
 .contact{
   height: 550px;
@@ -232,6 +256,7 @@ html{
   font-family: 'Exo 2', sans-serif;
   font-size: 40px;
   color: black;
+
 }
 
 .social-media{
@@ -241,10 +266,11 @@ html{
 
 .social-all{
   text-align: center;
+  font-family: 'Handlee', cursive;
 }
 
 .social-media-title{
-  // margin-bottom: 25px;
+  // font-family: 'Handlee', cursive;
 }
 
 .social-media-icons {
@@ -277,9 +303,12 @@ html{
   height: 550px;
 }
 
+#contact-us{
+  font-family: 'Handlee', cursive;
+}
+
 .contact-title h1{
   text-align: center;
-  /*background-color: white;*/
   margin-bottom: 88px;
   font-family: 'Exo 2', sans-serif;
   font-size: 40px;
@@ -344,16 +373,20 @@ select{
 }
 .form-style-1 .field-divided{
     width: 49%;
+    margin: 10px 0;
 }
 
 .form-style-1 .field-long{
     width: 100%;
+    // margin: 10px 0;
 }
 .form-style-1 .field-select{
     width: 100%;
+    // margin: 10px 0;
 }
 .form-style-1 .field-textarea{
     height: 100px;
+    // margin: 10px 0;
 }
 .form-style-1 input[type=submit], .form-style-1 input[type=button]{
     background: #4B99AD;
@@ -413,4 +446,13 @@ select{
 .admin-stuff h2{
     text-align: center;
     margin-bottom: 70px;
+}
+
+#back {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 20px;
+  color: #800020;
+  position: relative;
+  top: 75px;
+  margin-bottom: 10px;
 }
