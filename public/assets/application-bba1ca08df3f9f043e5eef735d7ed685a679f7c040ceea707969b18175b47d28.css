@@ -26,6 +26,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 /* line 9, /Users/naderabouezze/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_normalize.scss */
 html {
   font-family: sans-serif;
@@ -8785,39 +8786,46 @@ button.close {
     display: none !important;
   }
 }
-/* line 21, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+/* line 23, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
 html {
   height: 100%;
 }
 
-/* line 25, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+/* line 32, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
 body {
   width: 100%;
   height: 100%;
+  background-color: #fffffa;
 }
 
-/* line 30, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+/* line 39, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.navbar {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+/* line 43, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
 .navigation {
   margin-top: 20px;
 }
 
-/* line 34, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+/* line 47, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
 .main-content {
   margin-top: 20px;
 }
 
-/* line 38, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+/* line 51, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
 .navbar-brand {
   color: black;
 }
 
-/* line 42, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+/* line 55, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
 .navbar-light {
   height: 175px;
   width: 100%;
 }
 
-/* line 48, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+/* line 61, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
 .navbar-light a {
   font-size: 30px;
   display: inline-block;
@@ -8825,76 +8833,434 @@ body {
   margin-top: 5%;
 }
 
-/* line 55, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+/* line 68, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
 .navbar-light input {
   display: inline-block;
   float: right;
   margin-top: 5%;
   margin-right: 3%;
+  width: 110px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  border: 3px solid #5A0000;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px;
+  outline: none;
 }
 
-/* line 62, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+/* line 86, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+#logo-img {
+  width: 115px;
+  height: 65px;
+  position: relative;
+  bottom: 35px;
+  right: 35px;
+}
+
+/* line 94, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.searchButton {
+  position: absolute;
+  right: -50px;
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* line 110, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.filter-bar:focus {
+  width: 18%;
+}
+
+/* line 114, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
 .gallery_product {
   margin-top: 10px;
   margin-bottom: 20px;
 }
 
-/* line 67, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+/* line 119, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
 #sale-options {
   display: none;
   list-style-type: none;
   color: black;
 }
 
-/* line 72, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+/* line 125, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
 #sale-options a {
   color: black;
-  font-weight: bold;
-  font-size: 15px;
+  font-family: 'Poiret One', cursive;
+  font-size: 13px;
 }
 
-/* line 78, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+/* line 134, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
 #new-collection-options {
   display: none;
   list-style-type: none;
 }
 
-/* line 84, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+/* line 140, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
 #new-collection-options a {
   color: black;
-  font-weight: bold;
-  font-size: 15px;
+  font-family: 'Poiret One', cursive;
+  font-size: 13px;
 }
 
-/* line 89, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+/* line 146, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
 #sale-title {
-  font-family: 'Archivo Black', sans-serif;
-  font-size: 25px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 30px;
   color: #800020;
+  text-decoration: none;
 }
 
-/* line 94, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+/* line 152, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
 #catalogue-title {
-  font-family: 'Archivo Black', sans-serif;
+  font-family: 'Dancing Script', cursive;
   font-size: 25px;
   color: #800020;
 }
 
-/* line 99, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+/* line 157, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
 #new-collection-title {
-  font-family: 'Archivo Black', sans-serif;
-  font-size: 25px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 30px;
   color: #800020;
+  text-decoration: none;
 }
 
-/* line 104, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+/* line 165, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+#contact-us-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 30px;
+  color: black;
+  position: relative;
+  top: 100px;
+  text-decoration: none;
+}
+
+/* line 174, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
 .admin-links {
   float: right;
 }
 
-/* line 108, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+/* line 178, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
 .landing {
-  background-image: url("/assets/landing.jpg");
+  background: #fffffa url("/assets/loading.png");
   background-size: auto 100%;
   background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* line 185, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.outer {
+  height: 800px;
+  width: 100%;
+}
+
+/* line 196, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.old-price {
+  text-decoration: line-through;
+  margin-right: 20px;
+  color: #b30000;
+}
+
+/* line 203, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.item-info {
+  text-align: center;
+  margin-right: 45px;
+}
+
+/* line 208, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.item-description {
+  text-transform: uppercase;
+  font-family: 'Helvetica','Arial',Sans-Serif;
+  color: #222;
+  font-size: 11px;
+  line-height: 1.231;
+}
+
+/* line 217, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+#color {
+  text-transform: uppercase;
+  font-family: 'Helvetica','Arial',Sans-Serif;
+}
+
+/* line 222, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.img img {
+  width: 250px;
+  display: inline-block;
+  margin: 15px;
+}
+
+/* line 228, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.img-single img {
+  position: relative;
+  bottom: 75px;
+  left: 75px;
+  width: 350px;
+}
+
+/* line 236, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.piece-description {
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+/* line 241, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.field {
+  margin: 10px 0;
+}
+
+/* line 245, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.contact {
+  height: 550px;
+  width: 50%;
+  margin: auto;
+  position: relative;
+  right: 90px;
+}
+
+/* line 253, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.contact-title h1 {
+  text-align: center;
+  /*background-color: white;*/
+  margin-bottom: 88px;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 40px;
+  color: black;
+}
+
+/* line 263, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.social-media {
+  position: relative;
+  top: 350px;
+}
+
+/* line 268, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.social-all {
+  text-align: center;
+  font-family: 'Handlee', cursive;
+}
+
+/* line 277, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.social-media-icons {
+  margin-top: 30px;
+}
+
+/* line 281, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.social-media-icons img {
+  width: 50px;
+  height: 50px;
+}
+
+/* line 289, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+#instagram {
+  margin-right: 10px;
+}
+
+/* line 294, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+#facebook {
+  margin-left: 10px;
+}
+
+/* line 299, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.terms-of-service {
+  margin-top: 50px;
+}
+
+/* line 303, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.contact {
+  height: 550px;
+}
+
+/* line 307, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+#contact-us {
+  font-family: 'Handlee', cursive;
+}
+
+/* line 311, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.contact-title h1 {
+  text-align: center;
+  margin-bottom: 88px;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 40px;
+  color: black;
+}
+
+/* line 320, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.form-style-1 {
+  margin: 10px auto;
+  max-width: 400px;
+  padding: 20px 12px 10px 20px;
+  font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+/* line 326, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.form-style-1 li {
+  padding: 0;
+  display: block;
+  list-style: none;
+  margin: 10px 0 0 0;
+}
+
+/* line 332, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.form-style-1 label {
+  margin: 0 0 3px 0;
+  padding: 0px;
+  display: block;
+  font-weight: bold;
+}
+
+/* line 338, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.form-style-1 input[type=text],
+.form-style-1 input[type=date],
+.form-style-1 input[type=datetime],
+.form-style-1 input[type=number],
+.form-style-1 input[type=search],
+.form-style-1 input[type=time],
+.form-style-1 input[type=url],
+.form-style-1 input[type=email],
+textarea,
+select {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border: 1px solid #BEBEBE;
+  padding: 7px;
+  margin: 0px;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+}
+
+/* line 360, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.form-style-1 input[type=text]:focus,
+.form-style-1 input[type=date]:focus,
+.form-style-1 input[type=datetime]:focus,
+.form-style-1 input[type=number]:focus,
+.form-style-1 input[type=search]:focus,
+.form-style-1 input[type=time]:focus,
+.form-style-1 input[type=url]:focus,
+.form-style-1 input[type=email]:focus,
+.form-style-1 textarea:focus,
+.form-style-1 select:focus {
+  -webkit-box-shadow: 0 0 8px #800020;
+  box-shadow: 0 0 8px #800020;
+  border: 1px solid #800020;
+}
+
+/* line 375, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.form-style-1 .field-divided {
+  width: 49%;
+  margin: 10px 0;
+}
+
+/* line 380, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.form-style-1 .field-long {
+  width: 100%;
+}
+
+/* line 384, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.form-style-1 .field-select {
+  width: 100%;
+}
+
+/* line 388, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.form-style-1 .field-textarea {
+  height: 100px;
+}
+
+/* line 392, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.form-style-1 input[type=submit], .form-style-1 input[type=button] {
+  background: #4B99AD;
+  padding: 8px 15px 8px 15px;
+  border: none;
+  color: #fff;
+}
+
+/* line 398, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.form-style-1 input[type=submit]:hover, .form-style-1 input[type=button]:hover {
+  background: #4691A4;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+/* line 404, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.form-style-1 .required {
+  color: black;
+}
+
+/* line 410, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.rTable {
+  display: table;
+  width: 100%;
+}
+
+/* line 414, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.rTableRow {
+  display: table-row;
+}
+
+/* line 417, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.rTableHeading {
+  display: table-header-group;
+  background-color: #ddd;
+}
+
+/* line 421, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.rTableCell, .rTableHead {
+  display: table-cell;
+  padding: 2px 5px;
+  border: 1px solid #999999;
+  text-align: center;
+}
+
+/* line 429, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.rTableHeading {
+  display: table-header-group;
+  background-color: #ddd;
+  font-weight: bold;
+}
+
+/* line 434, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.rTableFoot {
+  display: table-footer-group;
+  font-weight: bold;
+  background-color: #ddd;
+}
+
+/* line 439, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.rTableBody {
+  display: table-row-group;
+}
+
+/* line 443, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.stock_form_field {
+  width: 77px;
+}
+
+/* line 447, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+.admin-stuff h2 {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+/* line 452, /Users/naderabouezze/Documents/Rails projects/mandelle/mandelle/app/assets/stylesheets/application.scss */
+#back {
+  font-family: 'Dancing Script', cursive;
+  font-size: 30px;
+  color: black;
+  position: relative;
+  top: 75px;
+  margin-bottom: 10px;
+  text-decoration: none;
 }

@@ -15249,8 +15249,34 @@ return this.lastRenderedLocation=this.location,this.notifyApplicationAfterPageLo
 
 
 }).call(this);
+// document.addEventListener("DOMContentLoaded", function(event) {
+//
+//
+//   $('#contact-form').submit(function(e) {
+//       var first_name = document.getElementById('inputFirstName');
+//       var last_name = document.getElementById('inputLastName');
+//       var email = document.getElementById('inputEmail');
+//       var number = document.getElementById('inputNumber');
+//       var message = document.getElementById('inputMessage');
+//
+//       if (!first_name.value || !last_name.value || !email.value || !number.value || !message.value) {
+//         e.preventDefault()
+//         alertify.error("Please Check Your entries")
+//       } else {
+//         $.ajax({
+//           url: "https://formspree.io/naderabouezze93@gmail.com",
+//           method: "POST",
+//           data: $(this).serialize(),
+//           dataType: "json"
+//   });
+//         e.preventDefault()
+//         $(this).get(0).reset()
+//         alertify.success('Message Sent')
+//       }
+//     })
+// });
 
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("turbolinks:load", function(event) {
 
 
   var input = document.getElementById('myInput');
@@ -15263,7 +15289,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     var searchTerm = input.value.toUpperCase();
     var itemDescriptions = document.getElementsByClassName('item-description');
-  
+
 
     for (var i = 0; i < itemDescriptions.length; i++) {
 
@@ -15287,7 +15313,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 }).call(this);
 
 // $(document).ready(function () {
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("turbolinks:load", function(event) {
+
+
+    var container = document.querySelector('.container');
+    var outer = document.querySelector('.outer');
+    var page_body = document.querySelector('.page-content');
 
     var sale = document.getElementById('sale-title')
     var list = document.getElementById('sale-options');
@@ -15297,10 +15328,26 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
       e.preventDefault()
 
+
+
       if (list.style.display == 'none') {
         list.style.display = 'block';
+        page_body.innerHTML = "";
+        outer.style.background = "#fffffa url('/assets/sloading3.png') no-repeat center top"
+        // outer.style.backgroundImage = "url('/assets/sloading.png')";
+        // var div = document.createElement("div");
+        // page_body.appendChild(div)
+        // div.style.backgroundImage = "url('/assets/landing.jpg')";
+
       } else {
         list.style.display = 'none';
+        page_body.innerHTML = "";
+        outer.style.background = "#fffffa url('/assets/sloading3.png') no-repeat center top"
+        // outer.style.backgroundImage = "url('/assets/sloading.png')";
+        // var div = document.createElement("div");
+        // page_body.appendChild(div)
+        // div.style.backgroundImage = "url('/assets/landing.jpg')";
+
       }
     });
 
@@ -15316,8 +15363,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
       if (list_two.style.display == 'none') {
         list_two.style.display = 'block';
+        page_body.innerHTML = "";
+        outer.style.background = "#fffffa url('/assets/ncloading5.png') no-repeat center right/65%";
+        // outer.style.backgroundSize = "100%";
+
       } else {
         list_two.style.display = 'none';
+        page_body.innerHTML = "";
+        outer.style.background = "#fffffa url('/assets/ncloading5.png') no-repeat center right/65%";
+        // outer.style.backgroundSize = "100%";
       }
     });
 
@@ -15327,8 +15381,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 });
+(function() {
 
-document.addEventListener("DOMContentLoaded", function(event) {
+
+}).call(this);
+
+document.addEventListener("turbolinks:load", function(event) {
 
 
   var items = document.querySelectorAll('.sale-category');
@@ -15339,29 +15397,44 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
       e.preventDefault()
 
-      var category = e.target.id;
-      // console.log(category);
+      var category = $(this).data('cat');
+      var sale = $(this).data('sale');
+
+
       console.log(category);
+      console.log(sale);
       $.ajax({
-        type: "POST",
-        url: '/clothings/retrieve',
-        data: JSON.stringify({ sale: 'True'}),
-        dataType: "json",
-        success: function(){
-          alert("success!!");
+        method: "POST",
+        url: 'clothings/fetch_items/',
+        data: { category: category, sale: sale},
+        dataType: "JSON"
+      }).done(function(data){
+            // alert("success!");
 
-        },
-        error:function(){
-          alert("failure!")
+          var clothings = JSON.stringify(data);
+          // console.log(clothings);
+          parsed_data = JSON.parse(clothings)
+          console.log(parsed_data);
+          parsed_data["clothings"]
 
-        }
+          $('.landing').css('background-image', 'none');
+          $('.outer').css('background-image', 'none');
+          $('.page-content').html('');
+
+
+
+          for (var i = 0; i < parsed_data["clothings"].length; i++) {
+            if (parsed_data["clothings"][i].price_old) {
+              $('.page-content').append('<div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle"><div class="item-pic"><a href="/clothings/' + parsed_data['clothings'][i].id + '"><img src="' + parsed_data['clothings'][i].images[0]['url'] + '"> </a></div><br><div class="item-info"><span class="item-description">' + parsed_data['clothings'][i].description  + '</span><br><span class="old-price">$' + parsed_data['clothings'][i].price_old + '</span><span class="item-price">$' + parsed_data['clothings'][i].price + '</span></div></div>')
+            } else {
+                $('.page-content').append('<div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle"><div class="item-pic"><a href="/clothings/' + parsed_data['clothings'][i].id + '"><img src="' + parsed_data['clothings'][i].images[0]['url'] + '"> </a></div><br><div class="item-info"><span class="item-description">' + parsed_data['clothings'][i].description  + '</span><br><span class="item-price">$' + parsed_data['clothings'][i].price + '</span></div></div>')
+            }
+
+            }
+        });
       });
-    });
-  }
-
-
-
-});
+    };
+  });
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
