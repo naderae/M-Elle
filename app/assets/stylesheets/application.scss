@@ -29,8 +29,8 @@ html{
 }
 
  body{
-   width: 100%;
-   height: 100%;
+   // width: 100%;
+   // height: 100%;
    background-color: #fffffa
 
  }
@@ -116,7 +116,7 @@ html{
  }
 
  #sale-options{
-   display: none;
+   // display: none;
    list-style-type: none;
    color: black;
 
@@ -131,7 +131,7 @@ html{
 
 
  #new-collection-options{
-   display: none;
+   // display: none;
    list-style-type: none;
 
  }
@@ -165,8 +165,8 @@ html{
    font-family: 'Dancing Script', cursive;
    font-size: 30px;
    color: black;
-   position: relative;
-   top: 100px;
+   // position: relative;
+   // top: 100px;
    text-decoration: none;
  }
 
@@ -175,14 +175,26 @@ html{
  }
 
  .landing{
-   background: #fffffa image-url('loading.png');
-   background-size: auto 100%;
+   // width: 80%;
+   height: 1100px;
+   background: #fffffa image-url('landing2.jpg');
+   background-size:cover;
    background-repeat: no-repeat;
    background-position: center;
+   display: block;
+   margin-top: 0 auto;
+   max-width: 100%;
+   // max-height: 100%;
+
 
  }
+
+ // @media only screen and(min-device-width: 769px){
+ //   .landing{}
+ // }
+
  .outer{
-   height: 800px;
+   height: 100%;
    width: 100%;
  }
 
@@ -242,12 +254,20 @@ html{
 }
 
 .contact{
-  height: 550px;
-  width: 50%;
-  margin: auto;
-  position: relative;
-  right: 90px;
+  // height: 550px;
+  // width: 50%;
+  margin: 0 auto ;
+  // position: relative;
+  // right: 200px;
+  // background: none;
+  // float: right;
 }
+.contact-emailphone{
+  text-align: center;
+}
+// .contact-phone{
+//
+// }
 
 .contact-title h1{
   text-align: center;
@@ -260,9 +280,22 @@ html{
 }
 
 .social-media{
-  position: relative;
-  top: 350px;
+   position:relative;
+   bottom:0;
+   width:100%;
+   height:100%;   /* Height of the footer */
+   // background:lightgrey;
+  // position:relative;
+  // bottom: 0;
+  // margin-top: 10%;
+  // margin: auto;
+  // position: fixed;
+  // bottom: 0;
+  // width: 100%;
+  // background-color: lightgrey;
 }
+
+
 
 .social-all{
   text-align: center;
@@ -456,4 +489,24 @@ select{
   top: 75px;
   margin-bottom: 10px;
   text-decoration: none;
+}
+
+
+@media screen and (min-width: 100px) and (max-width: 480px) {
+  .social-media {
+    position: relative;
+    bottom: 0;
+    height: 50%;
+    // width: 100%;
+  }
+}
+
+.terms a{
+  color: black  ;
+  text-decoration: none;
+}
+
+.number{
+  font-size: 20px;
+  text-align: center;
 }

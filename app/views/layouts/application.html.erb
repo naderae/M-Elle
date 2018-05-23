@@ -25,8 +25,8 @@
 
       </nav>
 
-      <div class="row">
-        <ul class="col-md-2 pull-left">
+      <div class="row ">
+        <ul class="col-sm-3 pull-left">
           <div class="navigation">
 
             <p>
@@ -86,25 +86,24 @@
 
 
 
-              <p>
-                <%= link_to "Contact Us", contact_path, id: "contact-us-title" %>
-              </p>
 
 
 
 
+
+            </div>
+
+          </ul>
+
+          <div class="admin-links">
+            <% if current_user.try(:admin?) %>
+              <%= link_to 'Logout', destroy_user_session_path, :method => :delete %><br>
+              <%= link_to 'Administration', admins_path %>
+            <% end %>
           </div>
-        </ul>
-
-        <div class="admin-links">
-          <% if current_user.try(:admin?) %>
-            <%= link_to 'Logout', destroy_user_session_path, :method => :delete %><br>
-            <%= link_to 'Administration', admins_path %>
-          <% end %>
-        </div>
 
 
-          <div class="col-md-10 pull-right">
+          <div class="col-sm-9 pull-right">
             <div class="main-content">
               <p class="notice"><%= notice %></p>
               <p class="alert"><%= alert %></p>
@@ -112,40 +111,52 @@
               <div class="page-content">
                 <%= yield %>
               </div>
-
             </div>
           </div>
 
           </div>
+        </div>
 
 
 
 
-            <div class="social-media">
+          <div class="row social-media">
+
+
               <div class="social-all">
                 <h3 id="social-media-title" >Check us out on Social Media</h3>
                 <div class="social-media-icons">
-                  <a id="instagram" href="https://www.instagram.com/m.and.elle/" target="_blank"><%= image_tag('instagram.png')%> ></a>
+                  <a id="instagram" href="https://www.instagram.com/m.and.elle/" target="_blank"><%= image_tag('instagram.png')%> </a>
                   <a id="facebook" href="https://www.facebook.com/quickoutfit/?ref=br_rs" target="_blank"><%= image_tag('facebook.png')%></a>
                 </div>
+
               </div>
-              <hr>
+              <!-- <hr> -->
               <div class="terms-of-service">
-                <div class="col-lg-12">
-                  <div class="col-md-8">
-                    <a href="#">Terms of Service</a> | <a href="#">Privacy</a>
+                <div class="row">
+
+
+                <!-- <div class="col-lg-12"> -->
+                  <div class="col-sm-3 col-sm-offset-1 terms">
+                    <a href="#">Terms of Service</a>
                   </div>
-                  <div class="col-md-4">
-                    <p class="muted pull-right">© 2018 M & ELLE. All rights reserved</p>
+                  <div class="col-sm-3 col-sm-offset-1">
+
+                      <%= link_to "Contact Us", contact_path, id: "contact-us-title" %>
+
                   </div>
-                </div>
+
+                  <div class="col-sm-3 col-sm-offset-1">
+                    <p>© 2018 M & ELLE.</p>
+                  </div>
+                <!-- </div> -->
+              <!-- </div> -->
+              <!-- <hr> -->
               </div>
-              <hr>
-          </div>
+            </div>
 
-
-        </div>
       </div>
+    </div>
 
 
 
