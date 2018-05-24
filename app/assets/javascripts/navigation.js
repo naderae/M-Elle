@@ -31,7 +31,7 @@ document.addEventListener("turbolinks:load", function(event) {
           parsed_data["clothings"]
 
           $('.landing').css('background-image', 'none');
-          $('.outer').css('background-image', 'none');
+          $('.container').css('background-image', 'none');
           $('.page-content').html('');
 
 

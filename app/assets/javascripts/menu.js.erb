@@ -9,7 +9,7 @@ document.addEventListener("turbolinks:load", function(event) {
     var landing = document.querySelector('.landing')
     var sale = document.getElementById('sale-title')
     var list = document.getElementById('sale-options');
-
+    var body = document.querySelector('body');
 
     sale.addEventListener("click", function(e){
 
@@ -17,33 +17,35 @@ document.addEventListener("turbolinks:load", function(event) {
 
 
 
-      if (list.style.display == 'none') {
+      // if (list.style.display == 'none') {
         // list.style.display = 'block';
+        page_body.innerHTML = "";
         landing.style.background = 'none';
         // landing.style.background = "#fffffa url('<%= asset_path("sloading3.png") %>') no-repeat center top"
         // $('.landing').css('background',"");
-        page_body.innerHTML = "";
-        outer.style.background = "#fffffa url('<%= asset_path("landing4.jpg") %>') no-repeat center top"
+
+        container.style.background = "#fffffa url('<%= asset_path("landing6.jpg") %>') no-repeat right top"
+        container.style.backgroundSize='cover';
         // outer.style.background = "#fffffa url('/assets/landing3.jpg') no-repeat center top"
         // outer.style.backgroundImage = "url('/assets/sloading.png')";
         // var div = document.createElement("div");
         // page_body.appendChild(div)
         // div.style.backgroundImage = "url('/assets/landing.jpg')";
 
-      } else {
+      // } else {
         // list.style.display = 'none';
         // landing.style.background = "#fffffa url('<%= asset_path("landing3.jpg") %>') no-repeat center top"
         // $('.landing').css('background',"");
-        landing.style.background = 'none';
-        page_body.innerHTML = "";
-        outer.style.background = "#fffffa url('<%= asset_path("landing4.jpg") %>') no-repeat center top"
+        // landing.style.background = 'none';
+        //
+        // landing.style.background = "#fffffa url('<%= asset_path("landing4.jpg") %>') no-repeat center top"
         // outer.style.background = "#fffffa url('/assets/sloading3.png') no-repeat center top"
         // outer.style.backgroundImage = "url('/assets/sloading.png')";
         // var div = document.createElement("div");
         // page_body.appendChild(div)
         // div.style.backgroundImage = "url('/assets/landing.jpg')";
 
-      }
+      // }
     });
 
 
@@ -56,22 +58,23 @@ document.addEventListener("turbolinks:load", function(event) {
 
       e.preventDefault()
 
-      if (list_two.style.display == 'none') {
+      // if (list_two.style.display == 'none') {
         // list_two.style.display = 'block';
-        landing.style.background = 'none';
+
         page_body.innerHTML = "";
-        outer.style.background = "#fffffa url('<%= asset_path("ncloading5.png") %>') no-repeat center right/65%"
+        landing.style.background = 'none';
+        container.style.background = "#fffffa url('<%= asset_path("landing4.jpg") %>') no-repeat left top"
         // outer.style.background = "#fffffa url('/assets/ncloading5.png') no-repeat center right/65%";
         // outer.style.backgroundSize = "100%";
 
-      } else {
+      // } else {
         // list_two.style.display = 'none';
-        landing.style.background = 'none';
-        page_body.innerHTML = "";
-        outer.style.background = "#fffffa url('<%= asset_path("ncloading5.png") %>') no-repeat center right/65%"
+        // landing.style.background = 'none';
+        // page_body.innerHTML = "";
+        // landing.style.background = "#fffffa url('<%= asset_path("landing3.jpg") %>') no-repeat center top"
         // outer.style.background = "#fffffa url('/assets/ncloading5.png') no-repeat center right/65%";
         // outer.style.backgroundSize = "100%";
-      }
+      // }
     });
 
 

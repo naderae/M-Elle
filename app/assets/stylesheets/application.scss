@@ -20,7 +20,7 @@
 
 
 html{
-  height: 100%;
+  // height: 100%;
 
   // border-top: solid 5px black;
   // border-right: solid 5px black;
@@ -122,10 +122,10 @@ html{
 
  }
  #sale-options a{
-   color: black;
+   color:  black;
    font-family: 'Poiret One', cursive;
 
-   font-size: 13px;
+   font-size: 20px;
  }
 
 
@@ -140,7 +140,7 @@ html{
    color: black;
    font-family: 'Poiret One', cursive;
    // font-weight: bold;
-   font-size: 13px;
+   font-size: 20px;
  }
  #sale-title{
    font-family:'Dancing Script', cursive;
@@ -193,11 +193,13 @@ html{
  //   .landing{}
  // }
 
- .outer{
-   height: 100%;
-   width: 100%;
- }
-
+ // .outer{
+ //   height: 100%;
+ //   width: 100%;
+ // }
+.container{
+  height: 1400px;
+}
 
  // .item-pic{
  //   max-height:245px;
@@ -280,10 +282,23 @@ html{
 }
 
 .social-media{
-   position:relative;
-   bottom:0;
-   width:100%;
-   height:100%;   /* Height of the footer */
+
+   // position:relative;
+   // bottom:0;
+   // width:100%;
+   // margin-right: 0%;
+   // margin-left: 0%;
+   // padding-top: 1%;
+   // padding-right: 2px;
+   // padding-left: 2px;
+   // display: inline;
+   // margin-top: 15%;
+   // height:100%;
+   // margin-top: 45%;
+   // position:absolute;
+   // bottom:0;
+   // width:100%;
+   // height:60px;
    // background:lightgrey;
   // position:relative;
   // bottom: 0;
@@ -300,6 +315,8 @@ html{
 .social-all{
   text-align: center;
   font-family: 'Handlee', cursive;
+  margin-top: 100px;;
+  color: #800020;
 }
 
 .social-media-title{
@@ -504,6 +521,12 @@ select{
 .terms a{
   color: black  ;
   text-decoration: none;
+  float:right;
+
+}
+
+.copyright{
+  float: right;
 }
 
 .number{
