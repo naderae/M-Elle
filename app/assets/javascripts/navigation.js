@@ -38,9 +38,9 @@ document.addEventListener("turbolinks:load", function(event) {
 
           for (var i = 0; i < parsed_data["clothings"].length; i++) {
             if (parsed_data["clothings"][i].price_old) {
-              $('.page-content').append('<div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle"><div class="item-pic"><a href="/clothings/' + parsed_data['clothings'][i].id + '"><img src="' + parsed_data['clothings'][i].images[0]['url'] + '"> </a></div><br><div class="item-info"><span class="item-description">' + parsed_data['clothings'][i].description  + '</span><br><span class="old-price">$' + parsed_data['clothings'][i].price_old + '</span><span class="item-price">$' + parsed_data['clothings'][i].price + '</span></div></div>')
+              $('.page-content').append('<div class="gallery_product col-lg-6 col-md-6 col-sm-7 col-xs-8 filter sprinkle"><div class="item-pic"><a href="/clothings/' + parsed_data['clothings'][i].id + '"><img src="' + parsed_data['clothings'][i].images[0]['url'] + '"> </a></div><br><div class="item-info"><span class="item-description">' + parsed_data['clothings'][i].description  + '</span><br><span class="old-price">$' + parsed_data['clothings'][i].price_old + '</span><span class="item-price">$' + parsed_data['clothings'][i].price + '</span></div></div>')
             } else {
-                $('.page-content').append('<div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle"><div class="item-pic"><a href="/clothings/' + parsed_data['clothings'][i].id + '"><img src="' + parsed_data['clothings'][i].images[0]['url'] + '"> </a></div><br><div class="item-info"><span class="item-description">' + parsed_data['clothings'][i].description  + '</span><br><span class="item-price">$' + parsed_data['clothings'][i].price + '</span></div></div>')
+                $('.page-content').append('<div class="gallery_product col-lg-6 col-md-6 col-sm-7 col-xs-8 filter sprinkle"><div class="item-pic"><a href="/clothings/' + parsed_data['clothings'][i].id + '"><img src="' + parsed_data['clothings'][i].images[0]['url'] + '"> </a></div><br><div class="item-info"><span class="item-description">' + parsed_data['clothings'][i].description  + '</span><br><span class="item-price">$' + parsed_data['clothings'][i].price + '</span></div></div>')
             }
 
             }

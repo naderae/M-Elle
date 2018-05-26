@@ -3,10 +3,12 @@
 
 
 
+<!-- <div class="container"> -->
+
 
     <% clothings.each do |clothing| %>
       <% if clothing.quantity %>
-        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle" >
+        <div class="gallery_product col-md-6 col-sm-7 col-xs-8 filter sprinkle" >
             <div class="item-pic"><%= link_to image_tag(clothing.images_urls[0].to_s), clothing_path(clothing.id) %></div><br>
             <div class="item-info">
               <span class="item-description"><%= clothing.description %> </span><br>
@@ -20,4 +22,4 @@
         </div>
       <% end %>
     <% end %>
-  
+<!-- </div> -->
