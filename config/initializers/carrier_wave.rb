@@ -11,7 +11,7 @@ CarrierWave.configure do |config|
     }
     config.storage :fog
     config.fog_directory = ENV['AWS_S3_BUCKET']
-    config.asset_host = ENV['ASSET_HOST']
+    # config.asset_host = ENV['ASSET_HOST']
   else
     config.storage :file
   end
