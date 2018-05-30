@@ -69,10 +69,10 @@ html{
    float: right;
    margin-top: 5%;
    margin-right: 3%;
-   width: 110px;
+   width: 140px;
    -webkit-transition: width 0.4s ease-in-out;
    transition: width 0.4s ease-in-out;
-   border: 3px solid #5A0000;
+   border: 2px solid black;
 
    padding: 5px;
    height: 20px;
@@ -107,7 +107,7 @@ html{
 
 
  .filter-bar:focus {
-    width: 18%;
+    width: 30%;
 }
 
  .gallery_product{
